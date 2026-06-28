@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e3440"/>
+      <stop offset="1" stop-color="#1b1e26"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="128" height="128" rx="28" fill="url(#bg)"/>
+  <!-- code lines: two muted (unselected) and two accented (selected) -->
+  <rect x="24" y="30" width="50" height="10" rx="5" fill="#4c566a"/>
+  <rect x="24" y="50" width="72" height="10" rx="5" fill="#89b4fa"/>
+  <rect x="24" y="70" width="60" height="10" rx="5" fill="#89b4fa"/>
+  <rect x="24" y="90" width="40" height="10" rx="5" fill="#4c566a"/>
+  <!-- @ mention badge -->
+  <circle cx="96" cy="96" r="26" fill="#a6e3a1" stroke="#1b1e26" stroke-width="4"/>
+  <text x="96" y="97" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#1b1e26" text-anchor="middle" dominant-baseline="central">@</text>
+</svg>

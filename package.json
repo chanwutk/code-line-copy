@@ -1,0 +1,74 @@
+{
+  "name": "code-line-copy",
+  "displayName": "Copy Code Reference",
+  "description": "Copy a Claude-Code-style @path#L reference for the selected lines.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-id",
+  "author": "chanwutk",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "copy",
+    "reference",
+    "line",
+    "clipboard",
+    "path"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chanwutk/code-line-copy"
+  },
+  "bugs": {
+    "url": "https://github.com/chanwutk/code-line-copy/issues"
+  },
+  "homepage": "https://github.com/chanwutk/code-line-copy#readme",
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeLineCopy.copyReference",
+        "title": "Copy Code Reference",
+        "category": "Copy Code Reference"
+      },
+      {
+        "command": "codeLineCopy.copyReferenceAbsolute",
+        "title": "Copy Code Reference (Absolute Path)",
+        "category": "Copy Code Reference"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codeLineCopy.copyReference",
+        "key": "ctrl+l",
+        "mac": "cmd+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeLineCopy.copyReferenceAbsolute",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test \"out/**/*.test.js\"",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.7.2"
+  }
+}
