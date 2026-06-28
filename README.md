@@ -60,24 +60,44 @@ rsvg-convert -w 128 -h 128 icon.svg -o icon.png
 npx svgexport icon.svg icon.png 128:128
 ```
 
-## Publishing to the Marketplace
+## Publishing
 
-These steps are one-time and must be done by the publisher:
+Published under the **`chanwutk`** publisher / namespace. Build the package first:
 
-1. Create a publisher at <https://marketplace.visualstudio.com/manage> (requires an Azure
-   DevOps organization).
-2. Generate an Azure DevOps **Personal Access Token** with the **Marketplace → Manage**
-   scope, for **all accessible organizations**.
-3. Replace the `publisher` placeholder in `package.json` with your publisher ID.
-4. Log in and publish:
+```sh
+npm run package   # → code-line-copy-<version>.vsix
+```
+
+### Open VSX (Cursor, Windsurf, VSCodium, Gitpod, code-server, …)
+
+VS Code forks pull from [Open VSX](https://open-vsx.org) rather than Microsoft's
+Marketplace.
+
+1. Sign in at <https://open-vsx.org> with GitHub, then sign the **Eclipse Foundation
+   Publisher Agreement** (one-time, linked from your user settings).
+2. Create an access token in your open-vsx.org user settings.
+3. Create the namespace once, then publish:
 
    ```sh
-   npx @vscode/vsce login <your-publisher-id>   # paste the PAT
-   npx @vscode/vsce package                     # builds code-line-copy-x.y.z.vsix
-   npx @vscode/vsce publish
+   export OVSX_PAT='your-open-vsx-token'   # ovsx reads this automatically
+   npx ovsx create-namespace chanwutk      # one-time
+   npm run publish:ovsx                     # ovsx publish (or: npx ovsx publish <file>.vsix)
    ```
 
-To install the packaged build locally without publishing:
+### VS Code Marketplace (official VS Code)
+
+1. Create a publisher at <https://marketplace.visualstudio.com/manage> (requires a
+   Microsoft account; the token comes from an Azure DevOps organization).
+2. Generate an Azure DevOps **Personal Access Token** scoped to **Marketplace → Manage**
+   for **all accessible organizations**.
+3. Log in and publish:
+
+   ```sh
+   npx @vscode/vsce login chanwutk   # paste the PAT
+   npm run publish                    # vsce publish
+   ```
+
+### Install a build locally without publishing
 
 ```sh
 code --install-extension code-line-copy-0.0.1.vsix

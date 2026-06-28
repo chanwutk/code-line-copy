@@ -3,8 +3,11 @@
   "displayName": "Copy Code Reference",
   "description": "Copy a Claude-Code-style @path#L reference for the selected lines.",
   "version": "0.0.1",
-  "publisher": "your-publisher-id",
-  "author": "chanwutk",
+  "publisher": "chanwutk",
+  "author": {
+    "name": "Chanwut (Mick) Kittivorawong",
+    "url": "https://github.com/chanwutk"
+  },
   "license": "MIT",
   "icon": "icon.png",
   "engines": {
@@ -64,11 +67,16 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "test": "npm run compile && node --test \"out/**/*.test.js\"",
-    "vscode:prepublish": "npm run compile"
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "publish:ovsx": "ovsx publish"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
     "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.9.2",
+    "ovsx": "^1.0.2",
     "typescript": "^5.7.2"
   }
 }
