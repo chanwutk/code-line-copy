@@ -103,6 +103,15 @@ Marketplace.
 code --install-extension code-line-copy-0.0.1.vsix
 ```
 
+## TODO
+
+- [ ] **Auto-publish via GitHub Actions on tags.** Add a workflow that triggers on
+      version tags (e.g. `v0.0.2`): run `npm test`, build with `npm run package`, then
+      publish to Open VSX (`ovsx publish`) and the VS Code Marketplace (`vsce publish`).
+      Store `OVSX_PAT` and `VSCE_PAT` as repository secrets.
+- [ ] **Publish to the VS Code Marketplace.** Currently published to Open VSX only;
+      complete the Marketplace publisher setup and first publish (see above).
+
 ## License
 
 [MIT](./LICENSE) © 2026 chanwutk

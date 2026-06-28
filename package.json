@@ -2,7 +2,7 @@
   "name": "code-line-copy",
   "displayName": "Copy Code Reference",
   "description": "Copy a Claude-Code-style @path#L reference for the selected lines.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "chanwutk",
   "author": {
     "name": "Chanwut (Mick) Kittivorawong",
